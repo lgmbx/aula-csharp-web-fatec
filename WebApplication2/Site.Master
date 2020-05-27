@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication2.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!--CSS GERAL-->
+    <link href="StyleSheet.css" rel="stylesheet" />
+    
+    <!--CSS flex slider-->
+    <link href="js/flexslider.css" rel="stylesheet" />
+    
+    <!--js flex slider-->
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/flexslider.min.js"></script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+
+
+
+        <!--cabeçalho-->
+        <div class="content-wrapper">
+            <div class="cabecalho">
+                
+                
+                <!--logomarca-->
+                <div class="logomarca">
+                    <img src="images/marca1.png" />
+                </div>
+
+                <!--menu-->
+                <div class="menu">
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Sobre.aspx">Sobre</asp:HyperLink>
+                    <asp:HyperLink ID="FaleConosco" runat="server" NavigateUrl="~/Contato.aspx">Contato</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Admin/ViewExceptions.aspx">Admin</asp:HyperLink>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--conteudo-->
+        <div class="conteudo">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+
+
+
+
+        <!--rodape-->
+        <div class="rodape">
+
+            <div class="content-wrapper">
+                Analise e desenvolvimento de sistemas 2020
+                <br />
+                Aulas online
+            </div>
+            
+            
+        </div> 
+
+    </form>
+</body>
+</html>
