@@ -161,6 +161,10 @@ body {
 	padding-left: 20px;
 }
 
+.box-padding-30px{
+	padding: 30px;
+}
+
 .box-border{
 	border:1px solid #a1a1a1;
 }

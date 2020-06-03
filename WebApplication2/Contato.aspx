@@ -11,7 +11,7 @@
 
 
             <!--COLUNA 1-->
-            <div class="col-6 box-padding-right-20px">
+            <div class="box-padding-30px col-6 box-border ">
                 
                 <h1>FALE CONOSCO</h1>
                 <br />
@@ -34,7 +34,7 @@
 
 
             <!--COLUNA 2-->
-            <div class="col-6 box-padding-left-20px">
+            <div class="col-6 box-padding-30px box-border">
                 
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4375.072931572696!2d-47.332146274212256!3d-22.
                     76600678922952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8999e5f2a83a3%3A0x1bb1901a8c883b97!2s

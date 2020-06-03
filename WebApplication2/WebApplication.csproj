@@ -43,10 +43,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AppDatabase">
+      <HintPath>..\..\..\lib\Source\AppDatabase 4.0\AppDatabase\bin\Debug\AppDatabase.dll</HintPath>
+    </Reference>
     <Reference Include="DLLADS2020">
       <HintPath>..\..\DLLADS2020\DLLADS2020\bin\Debug\DLLADS2020.dll</HintPath>
     </Reference>
+    <Reference Include="FirebirdSql.Data.FirebirdClient">
+      <HintPath>..\..\..\lib\Source\AppDatabase 4.0\AppDatabase\bin\Debug\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=8.0.20.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Source\AppDatabase 4.0\AppDatabase\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -70,7 +80,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\InserirUsuarios.aspx" />
     <Content Include="Admin\ViewExceptions.aspx" />
+    <Content Include="App_Data\ADSDB.accdb" />
     <Content Include="Contato.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Admin\Exceptions\log.txt" />
@@ -104,6 +116,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\InserirUsuarios.aspx.cs">
+      <DependentUpon>InserirUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\InserirUsuarios.aspx.designer.cs">
+      <DependentUpon>InserirUsuarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\ViewExceptions.aspx.cs">
       <DependentUpon>ViewExceptions.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -156,7 +175,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_code\" />
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
@@ -175,6 +193,8 @@
           <DevelopmentServerPort>62798</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>https://localhost:44399/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>https://localhost:44399/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

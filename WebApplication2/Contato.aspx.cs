@@ -51,8 +51,8 @@ namespace WebApplication2 {
 
 				RecoverExceptions re = new RecoverExceptions();
 				re.SaveException(ex);
-
-
+				
+				
 			}
 		}
     }

@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
 
     <div class="content-wrapper margin-top-100px">
-        <h2>Exceçoes ocorridas na app</h2>
+        <h1>Exceçoes ocorridas na app</h1>
         <hr />
         <br />
 

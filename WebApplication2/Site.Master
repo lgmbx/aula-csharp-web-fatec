@@ -8,7 +8,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <!--CSS GERAL-->
-    <link href="StyleSheet.css" rel="stylesheet" />
+    <link href="~/StyleSheet.css" rel="stylesheet" />
     
     <!--CSS flex slider-->
     <link href="js/flexslider.css" rel="stylesheet" />
@@ -30,7 +30,7 @@
                 
                 <!--logomarca-->
                 <div class="logomarca">
-                    <img src="images/marca1.png" />
+                    <asp:Image ID="Image1" ImageUrl="~/images/marca1.png" runat="server" />
                 </div>
 
                 <!--menu-->
@@ -39,6 +39,7 @@
                     <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Sobre.aspx">Sobre</asp:HyperLink>
                     <asp:HyperLink ID="FaleConosco" runat="server" NavigateUrl="~/Contato.aspx">Contato</asp:HyperLink>
                     <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Admin/ViewExceptions.aspx">Admin</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Admin/InserirUsuarios.aspx">Usuarios</asp:HyperLink>
 
                 </div>
 
