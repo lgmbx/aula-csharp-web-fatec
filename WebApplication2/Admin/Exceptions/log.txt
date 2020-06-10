@@ -18,3 +18,15 @@
 System 
 System.Net.Mail.SmtpException
  -----------------------------------------------------------
+6/10/2020 10:23:14 AM -- 'D:\fatec\aula c#\web\WebApplication2\WebApplication2\Apaap_Data\ADSDB.accdb' is not a valid path.  Make sure that the path name is spelled correctly and that you are connected to the server on which the file resides.
+Microsoft Office Access Database Engine 
+System.Data.OleDb.OleDbException
+ -----------------------------------------------------------
+6/10/2020 12:24:56 PM -- Syntax error in UPDATE statement.
+Microsoft Office Access Database Engine 
+System.Data.OleDb.OleDbException
+ -----------------------------------------------------------
+6/10/2020 12:25:08 PM -- No value given for one or more required parameters.
+Microsoft Office Access Database Engine 
+System.Data.OleDb.OleDbException
+ -----------------------------------------------------------

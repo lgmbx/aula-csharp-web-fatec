@@ -13,6 +13,15 @@ namespace WebApplication2.Admin {
     public partial class InserirUsuarios {
 
         /// <summary>
+        /// Codigo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Codigo;
+
+        /// <summary>
         /// NomeCompleto control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace WebApplication2.Admin {
         protected global::System.Web.UI.WebControls.Button Salvar;
 
         /// <summary>
+        /// Excluir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Excluir;
+
+        /// <summary>
         /// Mensagem control.
         /// </summary>
         /// <remarks>
@@ -65,5 +83,14 @@ namespace WebApplication2.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Mensagem;
+
+        /// <summary>
+        /// Usuarios control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView Usuarios;
     }
 }

@@ -6,12 +6,16 @@
 
     <div class="content-wrapper margin-top-100px">
         <div class="row">
-            
-            
+
+
             <!--Formulario de dados-->
             <div class="col-6 box-padding-30px box-border">
                 <h2>Cadastro de usuarios</h2>
                 <br />
+
+                <div class="float:Right;">
+                    <asp:Label ID="Codigo" runat="server" Font-Size="30px" Font-Bol="True"></asp:Label>
+                </div>
 
                 <label>Nome Completo</label>
                 <asp:TextBox ID="NomeCompleto" MaxLength="255" runat="server"></asp:TextBox>
@@ -27,18 +31,26 @@
                 <br />
                 <br />
                 <asp:Button ID="Salvar" OnClick="Salvar_Click" runat="server" Text="Salvar" />
+                <asp:Button ID="Excluir" OnClick="Excluir_Click" runat="server" Text="Excluir" />
                 <br />
                 <br />
-                <asp:Label ID="Mensagem" runat="server" ForeColor="red"></asp:Label>      
+                <asp:Label ID="Mensagem" runat="server" ForeColor="red"></asp:Label>
                 <br />
                 <br />
-                
+
             </div>
 
 
             <!--Exibir dados cadastrados-->
-            <div class="col-6 box-border box-padding-sides-20px">
+            <div class="col-6 box-padding-30px box-border ">
+                <asp:GridView ID="Usuarios" AutoGenerateColumns="true" AutoGenerateSelectButton="true" OnSelectedIndexChanged="Usuarios_SelectedIndexChanged" HeaderStyle-BackColor="WhiteSmoke" CellPadding="8" Width="100%" BorderColor="Silver" runat="server"></asp:GridView>
             </div>
+
+
+
+
+
+
         </div>
 
     </div>
