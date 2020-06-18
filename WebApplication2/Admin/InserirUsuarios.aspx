@@ -31,7 +31,7 @@
                 <br />
                 <br />
                 <asp:Button ID="Salvar" OnClick="Salvar_Click" runat="server" Text="Salvar" />
-                <asp:Button ID="Excluir" OnClick="Excluir_Click" runat="server" Text="Excluir" />
+                <asp:Button ID="Excluir" Visible="false" OnClick="Excluir_Click" runat="server" Text="Excluir" />
                 <br />
                 <br />
                 <asp:Label ID="Mensagem" runat="server" ForeColor="red"></asp:Label>
@@ -43,10 +43,24 @@
 
             <!--Exibir dados cadastrados-->
             <div class="col-6 box-padding-30px box-border ">
-                <asp:GridView ID="Usuarios" AutoGenerateColumns="true" AutoGenerateSelectButton="true" OnSelectedIndexChanged="Usuarios_SelectedIndexChanged" HeaderStyle-BackColor="WhiteSmoke" CellPadding="8" Width="100%" BorderColor="Silver" runat="server"></asp:GridView>
+                <h2>USUARIOS CADASTRADOS</h2>
+                <br />
+                
+                <!--BUSCA-->
+                <asp:TextBox ID="BuscarUsuario"  runat="server" Style="max-width: 340px; display:inline" ></asp:TextBox>
+                <asp:Button ID="Buscar" OnClick="Buscar_Click" Text="Buscar" runat="server" />
+                <asp:Button ID="Reset" OnClick="Reset_Click" Text="X" runat="server" />
+                
+                <!--PANEL-->
+                <asp:Panel ID="Panel1" ScrollBars="Vertical" Height="500px" runat="server">
+                    <!--GRIDVIEW-->
+                    <asp:GridView ID="Usuarios" AutoGenerateColumns="true" s AutoGenerateSelectButton="true" OnSelectedIndexChanged="Usuarios_SelectedIndexChanged" HeaderStyle-BackColor="Gray" CellPadding="8" Width="100%" BorderColor="Silver" runat="server">
+                    </asp:GridView>
+                </asp:Panel>
+                
             </div>
 
-
+            
 
 
 

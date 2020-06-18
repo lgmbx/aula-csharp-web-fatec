@@ -51,12 +51,7 @@ namespace WebApplication2.Admin {
                 db.ConnectionString = conexao;
                 db.Query(comando);
                
-                Mensagem.Text = "O registro foi inserido com sucesso";
-                Codigo.Text = "";
-                NomeCompleto.Text = "";
-                Login.Text = "";
-                Senha.Text = "";
-                Anotacoes.Text = "";
+                
 
                 ReadData();
             }
@@ -98,6 +93,12 @@ namespace WebApplication2.Admin {
                 Usuarios.DataSource = dt;
                 Usuarios.DataBind();
                 dt.Dispose();
+
+                Codigo.Text = "";
+                NomeCompleto.Text = "";
+                Login.Text = "";
+                Senha.Text = "";
+                Anotacoes.Text = "";
             }
             catch (Exception ex) {
                 Mensagem.Text = $"Houve uma falha inesperada no registro dos dados: {ex.Message} ";
@@ -109,25 +110,60 @@ namespace WebApplication2.Admin {
             
         }
 
+        //BOTAO SELECT
         protected void Usuarios_SelectedIndexChanged(object sender, EventArgs e) {
-            Codigo.Text = Usuarios.SelectedRow.Cells[1].Text;
 
-            string comando = "SELECT * FROM Usuarios WHERE Codigo=" + Codigo.Text;
+            try {
+                Codigo.Text = Usuarios.SelectedRow.Cells[1].Text;
+
+                string comando = "SELECT * FROM Usuarios WHERE Codigo=" + Codigo.Text;
 
 
-            OleDBTransaction db = new OleDBTransaction();
+                OleDBTransaction db = new OleDBTransaction();
+                db.ConnectionString = conexao;
+
+                DataTable tb = (DataTable)db.Query(comando);
+
+                if (tb.Rows.Count == 1) {
+                    NomeCompleto.Text = tb.Rows[0]["NomeCompleto"].ToString();
+                    Login.Text = tb.Rows[0]["Login"].ToString();
+                    Senha.Text = tb.Rows[0]["Senha"].ToString();
+                    Anotacoes.Text = tb.Rows[0]["Anotacoes"].ToString();
+
+                    Excluir.Visible = true;
+
+
+                }
+            }
+            catch (Exception ex) {
+
+                Mensagem.Text = $"Houve uma falha inesperada";
+
+                RecoverExceptions re = new RecoverExceptions();
+                re.SaveException(ex);
+            }
+            
+
+        }
+
+        //BUSCAR
+        protected void Buscar_Click(object sender, EventArgs e) {
+            string comando = $"SELECT Codigo, NomeCompleto, Login FROM Usuarios WHERE NomeCompleto + Login LIKE '%{BuscarUsuario.Text}%';";
+
+            AppDatabase.OleDBTransaction db = new AppDatabase.OleDBTransaction();
             db.ConnectionString = conexao;
 
-            DataTable tb = (DataTable)db.Query(comando);
+            DataTable dt = new DataTable();
+            dt = (DataTable)db.Query(comando);
 
-            if (tb.Rows.Count == 1) {
-                NomeCompleto.Text = tb.Rows[0]["NomeCompleto"].ToString();
-                Login.Text = tb.Rows[0]["Login"].ToString();
-                Senha.Text = tb.Rows[0]["Senha"].ToString();
-                Anotacoes.Text = tb.Rows[0]["Anotacoes"].ToString();
+            Usuarios.DataSource = dt;
+            Usuarios.DataBind();
+            dt.Dispose();
+        }
 
-            }
-
+        protected void Reset_Click(object sender, EventArgs e) {
+            BuscarUsuario.Text = "";
+            ReadData();
         }
 
         #endregion
@@ -136,22 +172,32 @@ namespace WebApplication2.Admin {
 
         protected void Excluir_Click(object sender, EventArgs e) {
 
-            OleDBTransaction db = new OleDBTransaction();
-            db.ConnectionString = conexao;
+            try {
+                OleDBTransaction db = new OleDBTransaction();
+                db.ConnectionString = conexao;
 
-            string comando = "DELETE FROM Usuarios WHERE Codigo=" + Codigo.Text;
-            db.Query(comando);
+                string comando = "DELETE FROM Usuarios WHERE Codigo=" + Codigo.Text;
+                db.Query(comando);
 
-            Mensagem.Text = "O registro foi DELETADO com sucesso";
-            Codigo.Text = "";
-            NomeCompleto.Text = "";
-            Login.Text = "";
-            Senha.Text = "";
-            Anotacoes.Text = "";
+                
+                
 
-            ReadData(); //RecuperarDados();
+                ReadData(); //RecuperarDados();
+            }
+            catch (Exception ex) {
+
+                Mensagem.Text = $"Houve uma falha inesperada";
+
+                RecoverExceptions re = new RecoverExceptions();
+                re.SaveException(ex);
+            }
+
+            
         }
 
+
         #endregion
+
+        
     }
 }

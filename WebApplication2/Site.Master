@@ -40,6 +40,7 @@
                     <asp:HyperLink ID="FaleConosco" runat="server" NavigateUrl="~/Contato.aspx">Contato</asp:HyperLink>
                     <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Admin/ViewExceptions.aspx">Admin</asp:HyperLink>
                     <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Admin/InserirUsuarios.aspx">Usuarios</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Login.aspx">Login</asp:HyperLink>
 
                 </div>
 
