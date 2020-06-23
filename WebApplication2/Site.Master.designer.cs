@@ -40,6 +40,15 @@ namespace WebApplication2 {
         protected global::System.Web.UI.WebControls.Image Image1;
 
         /// <summary>
+        /// NomeCompleto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NomeCompleto;
+
+        /// <summary>
         /// HyperLink1 control.
         /// </summary>
         /// <remarks>
@@ -67,22 +76,22 @@ namespace WebApplication2 {
         protected global::System.Web.UI.WebControls.HyperLink FaleConosco;
 
         /// <summary>
-        /// HyperLink3 control.
+        /// LinkViewExceptions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink3;
+        protected global::System.Web.UI.WebControls.HyperLink LinkViewExceptions;
 
         /// <summary>
-        /// HyperLink4 control.
+        /// LinkInserirUsuarios control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink4;
+        protected global::System.Web.UI.WebControls.HyperLink LinkInserirUsuarios;
 
         /// <summary>
         /// HyperLink5 control.

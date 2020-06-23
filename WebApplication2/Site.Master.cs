@@ -9,6 +9,16 @@ namespace WebApplication2 {
     public partial class Site : System.Web.UI.MasterPage {
         protected void Page_Load(object sender, EventArgs e) {
             
-        }
+            if(Session["NomeCompleto"] != null) {
+                NomeCompleto.Text = Session["NomeCompleto"].ToString();
+                LinkViewExceptions.Visible = true;
+                LinkInserirUsuarios.Visible = true;
+            }
+            else {
+                LinkViewExceptions.Visible = false;
+                LinkInserirUsuarios.Visible = false;
+            }
+
+        }   
     }
 }
