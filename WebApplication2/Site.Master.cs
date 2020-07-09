@@ -13,10 +13,14 @@ namespace WebApplication2 {
                 NomeCompleto.Text = Session["NomeCompleto"].ToString();
                 LinkViewExceptions.Visible = true;
                 LinkInserirUsuarios.Visible = true;
+                LinkLogin.Visible = false;
+                LinkLogout.Visible = true;
             }
             else {
                 LinkViewExceptions.Visible = false;
                 LinkInserirUsuarios.Visible = false;
+                LinkLogin.Visible = true;
+                LinkLogout.Visible = false;
             }
 
         }   

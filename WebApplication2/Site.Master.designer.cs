@@ -94,13 +94,22 @@ namespace WebApplication2 {
         protected global::System.Web.UI.WebControls.HyperLink LinkInserirUsuarios;
 
         /// <summary>
-        /// HyperLink5 control.
+        /// LinkLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink5;
+        protected global::System.Web.UI.WebControls.HyperLink LinkLogin;
+
+        /// <summary>
+        /// LinkLogout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink LinkLogout;
 
         /// <summary>
         /// ContentPlaceHolder3 control.

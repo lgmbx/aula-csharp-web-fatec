@@ -44,7 +44,9 @@
                     <asp:HyperLink ID="FaleConosco" runat="server" NavigateUrl="~/Contato.aspx">Contato</asp:HyperLink>
                     <asp:HyperLink ID="LinkViewExceptions" runat="server" Visible="false" NavigateUrl="~/Admin/ViewExceptions.aspx">Admin</asp:HyperLink>
                     <asp:HyperLink ID="LinkInserirUsuarios" runat="server" Visible="false" NavigateUrl="~/Admin/InserirUsuarios.aspx">Usuarios</asp:HyperLink>
-                    <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Login.aspx">Login</asp:HyperLink>
+                    <asp:HyperLink ID="LinkLogin" runat="server" NavigateUrl="~/Login.aspx">Login</asp:HyperLink>
+                    <asp:HyperLink ID="LinkLogout" runat="server" Visible="false" NavigateUrl="~/Logout.aspx">Logout</asp:HyperLink>
+
 
                 </div>
 

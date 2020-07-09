@@ -23,9 +23,9 @@ namespace WebApplication2.Admin {
 
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack) {
-               ReadData();
+                ReadData();
             }
-           
+
         }
 
 
@@ -34,38 +34,57 @@ namespace WebApplication2.Admin {
 
 
             try {
-                string comando = "";
-                if (Codigo.Text == "") {
-                     comando = $"INSERT INTO Usuarios(NomeCompleto, Login, Senha, Anotacoes)" +
-                    $" Values('{NomeCompleto.Text}', '{Login.Text}', '{Senha.Text}', '{Anotacoes.Text}');";
+                if (NomeCompleto.Text.Trim() == "") {
+                    Mensagem.Text = "O nome deve ser digitado";
                 }
+                else if (Login.Text.Trim() == "") {
+                    Mensagem.Text = "O nome de login ser digitado";
+                }
+                else if (EsteLoginExiste(Login.Text.Trim())) {
+                    Mensagem.Text = "Este nome de login já existe, tente outro.";
+                }
+
+                else if (Senha.Text.Trim() == "") {
+                    Mensagem.Text = "A senha deve ser digitada";
+                }
+
+                
                 else {
-                    comando = $"UPDATE Usuarios SET NomeCompleto='{NomeCompleto.Text}', Login='{Login.Text}', Senha='{Senha.Text}', Anotacoes='{Anotacoes.Text}' WHERE CODIGO={Codigo.Text}";
+
+
+                    string comando = "";
+                    if (Codigo.Text == "") {
+                        comando = $"INSERT INTO Usuarios(NomeCompleto, Login, Senha, Anotacoes)" +
+                       $" Values('{NomeCompleto.Text}', '{Login.Text}', '{Senha.Text}', '{Anotacoes.Text}');";
+                    }
+                    else {
+                        comando = $"UPDATE Usuarios SET NomeCompleto='{NomeCompleto.Text}', Login='{Login.Text}', Senha='{Senha.Text}', Anotacoes='{Anotacoes.Text}' WHERE CODIGO={Codigo.Text}";
+                    }
+
+
+
+
+                    //3.Conectar ao banco e enviar o comando sql    
+                    AppDatabase.OleDBTransaction db = new AppDatabase.OleDBTransaction();
+                    db.ConnectionString = conexao;
+                    db.Query(comando);
+
+
+
+                    ReadData();
                 }
-
-               
-                
-
-                //3.Conectar ao banco e enviar o comando sql    
-                AppDatabase.OleDBTransaction db = new AppDatabase.OleDBTransaction();
-                db.ConnectionString = conexao;
-                db.Query(comando);
-               
-                
-
-                ReadData();
             }
             catch (Exception ex) {
                 Mensagem.Text = $"Houve uma falha inesperada no registro dos dados: {ex.Message} ";
 
                 RecoverExceptions re = new RecoverExceptions();
                 re.SaveException(ex);
-                
+
             }
 
-            
-            
-            
+
+
+
 
 
         }
@@ -77,7 +96,7 @@ namespace WebApplication2.Admin {
         protected void ReadData() {
             try {
 
-               
+
 
 
 
@@ -107,7 +126,7 @@ namespace WebApplication2.Admin {
                 re.SaveException(ex);
 
             }
-            
+
         }
 
         //BOTAO SELECT
@@ -142,7 +161,7 @@ namespace WebApplication2.Admin {
                 RecoverExceptions re = new RecoverExceptions();
                 re.SaveException(ex);
             }
-            
+
 
         }
 
@@ -166,6 +185,29 @@ namespace WebApplication2.Admin {
             ReadData();
         }
 
+        //verifica se o login ja existe antes de cadastrar
+        protected bool EsteLoginExiste(string nomeLogin) {
+            string comando = "SELECT * FROM Usuarios WHERE Login='" + nomeLogin + "';";
+            // 3. CONECTAR AO BANCO DE DADOS ED ENVIAR O COMANDO SQL
+            AppDatabase.OleDBTransaction db = new AppDatabase.OleDBTransaction();
+            db.ConnectionString = conexao;
+            // DataTable é o repositório na MP para os dados vindos do SELECT
+            System.Data.DataTable tb = (System.Data.DataTable)db.Query(comando);
+
+            if (tb.Rows.Count == 1) {
+                if (tb.Rows[0]["Codigo"].ToString() == Codigo.Text) {
+                    // este código de usuário é o mesmo que esta sendo editado.
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+            else {
+                return false;
+            }
+        }
+
         #endregion
 
         #region Excluir Registro
@@ -179,8 +221,8 @@ namespace WebApplication2.Admin {
                 string comando = "DELETE FROM Usuarios WHERE Codigo=" + Codigo.Text;
                 db.Query(comando);
 
-                
-                
+
+
 
                 ReadData(); //RecuperarDados();
             }
@@ -192,12 +234,12 @@ namespace WebApplication2.Admin {
                 re.SaveException(ex);
             }
 
-            
+
         }
 
 
         #endregion
 
-        
+
     }
 }
