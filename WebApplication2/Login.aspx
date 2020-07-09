@@ -3,11 +3,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
 
-    <div class="content-wrapper margin-top-60px">
+    <div class="content-wrapper margin-top-60px mx-auto ">
         <div class="row">
             <!--Formulario de login-->
             <div class="col-3 box-border box-padding-30px">
-                <h2>Entrar</h2>
+                
+                <h2 class="text-center">Entrar</h2>
                 <br />
                 <asp:Label ID="Mensagem" runat="server" ForeColor="Red"></asp:Label>
                 
@@ -22,11 +23,7 @@
             </div>
 
 
-            <!--outro-->
-            <div class="col-6 box-padding-30px">
-
-
-            </div>
+            
         </div>
     </div>
 

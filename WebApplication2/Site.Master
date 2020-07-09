@@ -41,6 +41,7 @@
                 <div class="menu">
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
                     <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Sobre.aspx">Sobre</asp:HyperLink>
+                    <asp:HyperLink ID="Downloads" runat="server" NavigateUrl="~/Downloads.aspx">Downloads</asp:HyperLink>
                     <asp:HyperLink ID="FaleConosco" runat="server" NavigateUrl="~/Contato.aspx">Contato</asp:HyperLink>
                     <asp:HyperLink ID="LinkViewExceptions" runat="server" Visible="false" NavigateUrl="~/Admin/ViewExceptions.aspx">Admin</asp:HyperLink>
                     <asp:HyperLink ID="LinkInserirUsuarios" runat="server" Visible="false" NavigateUrl="~/Admin/InserirUsuarios.aspx">Usuarios</asp:HyperLink>
