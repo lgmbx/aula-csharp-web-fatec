@@ -9,11 +9,8 @@
         <br />
         
         <p>
-
-            odeio css  odeio css  odeio css  odeio css  odeio css  odeio css  odeio css
-             odeio css  odeio css  odeio css  odeio css  odeio css  odeio css  odeio css 
-             odeio css  odeio css  odeio css  odeio css  odeio css  odeio css  odeio css 
-             odeio css  odeio css  odeio css  odeio css  odeio css  odeio css  odeio css 
+            ADS Fatec - Segunda turma de 2019<br />
+            Aula de C# - Prof Diogenes
 
         </p>
 
